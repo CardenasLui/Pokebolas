@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="color: rgb(121, 51, 214);">{{ pokemon?.name | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="detail-container">
+    <ion-img [src]="pokemon?.sprites?.front_default" alt="{{ pokemon?.name }}"
+      style="height: 300px; width: auto;"></ion-img>
+    <p><strong>Peso:</strong> {{ pokemon?.weight }}</p>
+    <p><strong>Altura:</strong> {{ pokemon?.height }}</p>
+    <p><strong>Habilidades:</strong></p>
+    <ul>
+      <li *ngFor="let ability of pokemon?.abilities">
+        {{ ability.ability.name }}
+      </li>
+    </ul>
+  </div>
+</ion-content>
